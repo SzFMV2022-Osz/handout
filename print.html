@@ -5,8 +5,10 @@
         <meta charset="UTF-8">
         <title>Jegyzet</title>
         <meta name="robots" content="noindex" />
+
+
         <!-- Custom HTML head -->
-        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        
         <meta name="description" content="Szoftverfejlesztés multinacionális vállalatoknál">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
@@ -17,27 +19,31 @@
         <link rel="stylesheet" href="css/general.css">
         <link rel="stylesheet" href="css/chrome.css">
         <link rel="stylesheet" href="css/print.css" media="print">
+
         <!-- Fonts -->
         <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
         <link rel="stylesheet" href="fonts/fonts.css">
+
         <!-- Highlight.js Stylesheets -->
         <link rel="stylesheet" href="highlight.css">
         <link rel="stylesheet" href="tomorrow-night.css">
         <link rel="stylesheet" href="ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
+
         <!-- MathJax -->
-        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     </head>
     <body>
+    <div id="body-container">
         <!-- Provide site root to javascript -->
-        <script type="text/javascript">
+        <script>
             var path_to_root = "";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
-        <script type="text/javascript">
+        <script>
             try {
                 var theme = localStorage.getItem('mdbook-theme');
                 var sidebar = localStorage.getItem('mdbook-sidebar');
@@ -53,7 +59,7 @@
         </script>
 
         <!-- Set the theme before any content is loaded, prevents flash -->
-        <script type="text/javascript">
+        <script>
             var theme;
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
@@ -65,7 +71,7 @@
         </script>
 
         <!-- Hide / unhide sidebar before it is displayed -->
-        <script type="text/javascript">
+        <script>
             var html = document.querySelector('html');
             var sidebar = 'hidden';
             if (document.body.clientWidth >= 1080) {
@@ -86,7 +92,7 @@
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
-                <div id="menu-bar-hover-placeholder"></div>
+                                <div id="menu-bar-hover-placeholder"></div>
                 <div id="menu-bar" class="menu-bar sticky bordered">
                     <div class="left-buttons">
                         <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
@@ -96,7 +102,7 @@
                             <i class="fa fa-paint-brush"></i>
                         </button>
                         <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
@@ -113,6 +119,7 @@
                         <a href="print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
+
                     </div>
                 </div>
 
@@ -126,8 +133,9 @@
                         </ul>
                     </div>
                 </div>
+
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
-                <script type="text/javascript">
+                <script>
                     document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
                     document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
                     Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
@@ -361,7 +369,7 @@ teszt stratégiák (top-down, bottom-up, sandwich, big-bang, risky-hardest),
 </ul>
 </li>
 </ul>
-<p><img src="https://s.yimg.com/ny/api/res/1.2/up437vRgY_hH6IXyJKtnMA--%7EA/YXBwaWQ9aGlnaGxhbmRlcjtzbT0xO3c9NjUwO2g9NjAx/http://globalfinance.zenfs.com/en_us/Finance/US_AFTP_SILICONALLEY_H_LIVE/Googles_services_are_powered_by-af07bc22a8b413a9049fd5c7514120be" alt="" /></p>
+<p><img src="https://s.yimg.com/ny/api/res/1.2/up437vRgY_hH6IXyJKtnMA--~A/YXBwaWQ9aGlnaGxhbmRlcjtzbT0xO3c9NjUwO2g9NjAx/http://globalfinance.zenfs.com/en_us/Finance/US_AFTP_SILICONALLEY_H_LIVE/Googles_services_are_powered_by-af07bc22a8b413a9049fd5c7514120be" alt="" /></p>
 <ul>
 <li><a href="https://www.informationisbeautiful.net/visualizations/million-lines-of-code/">Teljesebb összehasonlítás</a></li>
 </ul>
@@ -563,7 +571,7 @@ https://sceweb.uhcl.edu/helm/RationalUnifiedProcess/process/modguide/md_sad.htm#
 <li>Data dominates. If you've chosen the right data structures and organized things well, the algorithms will almost always be self-evident. Data structures, not algorithms, are central to programming.</li>
 </ol>
 <p>Pike's rules 1 and 2 restate Tony Hoare's famous maxim &quot;Premature optimization is the root of all evil.&quot; Ken Thompson rephrased Pike's rules 3 and 4 as &quot;When in doubt, use brute force.&quot;. Rules 3 and 4 are instances of the design philosophy KISS. Rule 5 was previously stated by Fred Brooks in The Mythical Man-Month. Rule 5 is often shortened to &quot;write stupid code that uses smart objects&quot;.</p>
-<p><a href="http://users.ece.utexas.edu/%7Eadnan/pike.html">forrás</a></p>
+<p><a href="http://users.ece.utexas.edu/~adnan/pike.html">forrás</a></p>
 <h3 id="zen-of-python1"><a class="header" href="#zen-of-python1">Zen of Python<sup class="footnote-reference"><a href="#1">1</a></sup></a></h3>
 <blockquote>
 <p>The Zen of Python is a collection of 19 &quot;guiding principles&quot; for writing computer programs that influence the design of the Python programming language. <sup class="footnote-reference"><a href="#2">2</a></sup></p>
@@ -910,7 +918,7 @@ https://sceweb.uhcl.edu/helm/RationalUnifiedProcess/process/modguide/md_sad.htm#
 <p>Az ember hajlamos ad-hoc módon is verziózni a munkáját, pl.<sup class="footnote-reference"><a href="#1">1</a></sup>:</p>
 <p><img src="http://smutch.github.io/VersionControlTutorial/_images/intro1.png" alt="" /></p>
 <p>Több szolgáltatás és szoftver alapból tartalmaz verziókövetést, pl. a Dropbox, Google Drive, stb. is verziózza a feltöltött állományokat; az MS Word még <a href="https://support.microsoft.com/en-us/office/combine-document-revisions-f8f07f09-4461-4376-b041-89ad67412cfe?ui=en-us&amp;rs=en-us&amp;ad=us">merge-elni is tudja az egyes verziókat</a>.</p>
-<p>Michael Ernst <a href="https://homes.cs.washington.edu/%7Emernst/advice/version-control.html">összefoglalója alapján</a>:</p>
+<p>Michael Ernst <a href="https://homes.cs.washington.edu/~mernst/advice/version-control.html">összefoglalója alapján</a>:</p>
 <ul>
 <li><strong>Version control enables multiple people to simultaneously work on a single project.</strong> Each person edits his or her own copy of the files and chooses when to share those changes with the rest of the team. Thus, temporary or partial edits by one person do not interfere with another person's work.</li>
 <li>Version control also enables one person you to use multiple computers to work on a project, so it is valuable even if you are working by yourself.</li>
@@ -930,7 +938,7 @@ https://sceweb.uhcl.edu/helm/RationalUnifiedProcess/process/modguide/md_sad.htm#
 - Copy-Modify-Merge
 -->
 <ul>
-<li><a href="https://tortoisesvn.net/docs/nightly/TortoiseSVN_en/tsvn-basics-versioning.html">Ez az írás</a> összefoglalja a verziókezelési modelleket (Lock-Modify-Unlock, Copy-Modify-Merge), <a href="https://homes.cs.washington.edu/%7Emernst/advice/version-control.html">emez pedig</a> összehasonlítja a centralizált és az elosztott verziókezelőket.</li>
+<li><a href="https://tortoisesvn.net/docs/nightly/TortoiseSVN_en/tsvn-basics-versioning.html">Ez az írás</a> összefoglalja a verziókezelési modelleket (Lock-Modify-Unlock, Copy-Modify-Merge), <a href="https://homes.cs.washington.edu/~mernst/advice/version-control.html">emez pedig</a> összehasonlítja a centralizált és az elosztott verziókezelőket.</li>
 <li><a href="https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control">About Version Control</a>
 <ul>
 <li>a Git könyv első fejezete, rövid összefoglaló</li>
@@ -942,9 +950,9 @@ https://sceweb.uhcl.edu/helm/RationalUnifiedProcess/process/modguide/md_sad.htm#
 <p>http://smutch.github.io/VersionControlTutorial/pages/0-intro.html#what-is-version-control</p>
 </div>
 <h3 id="centralizált-verziókezelő"><a class="header" href="#centralizált-verziókezelő">Centralizált verziókezelő</a></h3>
-<p><img src="https://homes.cs.washington.edu/%7Emernst/advice/version-control-fig2.png" alt="centralized_version_control" /></p>
+<p><img src="https://homes.cs.washington.edu/~mernst/advice/version-control-fig2.png" alt="centralized_version_control" /></p>
 <h3 id="elosztott-verziókezelő"><a class="header" href="#elosztott-verziókezelő">Elosztott verziókezelő</a></h3>
-<p><img src="https://homes.cs.washington.edu/%7Emernst/advice/version-control-fig3.png" alt="distributed_version_control" /></p>
+<p><img src="https://homes.cs.washington.edu/~mernst/advice/version-control-fig3.png" alt="distributed_version_control" /></p>
 <h3 id="branching"><a class="header" href="#branching">Branching</a></h3>
 <ul>
 <li><a href="https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging">Git Branching - Basic Branching and Merging</a></li>
@@ -2655,7 +2663,7 @@ Teljesen járható út, hogy a modell, az input állományban található koordi
 <li><img src="sprints_old/images/model_interface.png" alt="" /></li>
 </ul>
 </li>
-<li>A poligonok megrajzolásához használható a <a href="https://www.robots.ox.ac.uk/%7Evgg/software/via/">VGG Image Annotator</a>, amely <a href="https://www.robots.ox.ac.uk/%7Evgg/software/via/via.html">böngészőből is működik</a> és a megrajzolt polygont JSON-ben le lehet menteni.
+<li>A poligonok megrajzolásához használható a <a href="https://www.robots.ox.ac.uk/~vgg/software/via/">VGG Image Annotator</a>, amely <a href="https://www.robots.ox.ac.uk/~vgg/software/via/via.html">böngészőből is működik</a> és a megrajzolt polygont JSON-ben le lehet menteni.
 <ul>
 <li>Korábbi félév során @ArchiCat és @konyarilaszlo ezt már megtette, elérhető a <a href="sprints_old/resources/worldobject_polygons.json">worldobject_polygons.json</a> állományban.</li>
 </ul>
@@ -3702,7 +3710,7 @@ Viszont az IntelliJ IDEA GUI Designer-e <em>nem</em> használható, esetleges ko
 <p><img src="images/tree_polygon.png" alt="" /></p>
 <p>Az útelemek esetében nem az ütközés a probléma, hanem a sávokat kell kijelölni, amit a a sávtartó automatika fog felhasználni. Ezeket is lehet egyszerűsíteni.</p>
 <p><img src="images/90left_polygon.png" alt="" /></p>
-<p>A poligonok megrajzolásához használható a <a href="https://www.robots.ox.ac.uk/%7Evgg/software/via/">VGG Image Annotator</a>, amely <a href="https://www.robots.ox.ac.uk/%7Evgg/software/via/via.html">böngészőből is működik</a> és a megrajzolt polygont JSON-ben le lehet menteni.</p>
+<p>A poligonok megrajzolásához használható a <a href="https://www.robots.ox.ac.uk/~vgg/software/via/">VGG Image Annotator</a>, amely <a href="https://www.robots.ox.ac.uk/~vgg/software/via/via.html">böngészőből is működik</a> és a megrajzolt polygont JSON-ben le lehet menteni.</p>
 <p>Korábbi félév során @ArchiCat és @konyarilaszlo ezt már megtette, elérhető a <a href="resources/worldobject_polygons.json">worldobject_polygons.json</a> állományban.</p>
 <p>Ennek struktúrája:</p>
 <pre><code class="language-json">{
@@ -3726,7 +3734,7 @@ Viszont az IntelliJ IDEA GUI Designer-e <em>nem</em> használható, esetleges ko
     ]
 }
 </code></pre>
-<p>Van benne egy objects tömb, minden objektum esetében a <code>typename</code> a képfájl neve (kiterjesztés nélkül), majd egy polygon tömb (mivel a <a href="https://www.robots.ox.ac.uk/%7Evgg/software/via/">VGG Image Annotator</a> multipoligonokat is elő tud állítani). Azon belül egy <code>points</code> tömb ahol a koordináták a képfájlon koordinátarendszerében értendők.</p>
+<p>Van benne egy objects tömb, minden objektum esetében a <code>typename</code> a képfájl neve (kiterjesztés nélkül), majd egy polygon tömb (mivel a <a href="https://www.robots.ox.ac.uk/~vgg/software/via/">VGG Image Annotator</a> multipoligonokat is elő tud állítani). Azon belül egy <code>points</code> tömb ahol a koordináták a képfájlon koordinátarendszerében értendők.</p>
 <p><img src="images/polygon_relative_coordinates.png" alt="" /></p>
 <p>A fenti példa esetében a képfájl (50, 20) koordinátára van rajzolva, a hatszög benne a képen belüli relatív koordinátákkal van megadva.</p>
 <pre><code class="language-json">&quot;points&quot;: [
@@ -4407,42 +4415,54 @@ A buszon közölt „utoljára látott tábla” képét ki kell tudni rajzolni 
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
+
+
                         <div style="clear: both"></div>
                     </nav>
                 </div>
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
             </nav>
 
         </div>
 
-        <script type="text/javascript">
+
+
+
+        <script>
             window.playground_copyable = true;
         </script>
-        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
-        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
-        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
 
         <!-- Custom JS scripts -->
-        <script type="text/javascript" src="context-cards.js"></script>
-        <script type="text/javascript" src="mermaid-init.js"></script>
-        <script type="text/javascript" src="mermaid.min.js"></script>
-        <script type="text/javascript" src="d3.5.16.0.js"></script>
-        <script type="text/javascript" src="markmap-lib.transform.min.js"></script>
-        <script type="text/javascript" src="markmap-lib.view.min.js"></script>
-        <script type="text/javascript" src="markmap-init.js"></script>
-        <script type="text/javascript" src="quizdown/quizdown.js"></script>
-        <script type="text/javascript" src="quizdown/quizdown-init.js"></script>
-        <script type="text/javascript">
+        <script src="context-cards.js"></script>
+        <script src="mermaid-init.js"></script>
+        <script src="mermaid.min.js"></script>
+        <script src="d3.5.16.0.js"></script>
+        <script src="markmap-lib.transform.min.js"></script>
+        <script src="markmap-lib.view.min.js"></script>
+        <script src="markmap-init.js"></script>
+        <script src="quizdown/quizdown.js"></script>
+        <script src="quizdown/quizdown-init.js"></script>
+
+        <script>
         window.addEventListener('load', function() {
             MathJax.Hub.Register.StartupHook('End', function() {
                 window.setTimeout(window.print, 100);
             });
         });
         </script>
+
+    </div>
     </body>
 </html>
